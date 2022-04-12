@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-sm-8">
+        <h2>Enregistrement d'un nouveau livre</h2>
+        <form [formGroup]="bookForm" (ngSubmit)="onSaveBook()">
+            <div class="form-group">
+                <label for="title">Titre</label>
+                <input type="text" class="form-control" id="title" formControlName="title" placeholder="Le tritre du livre">
+            </div>
+            <div class="form-group">
+                <label for="author">Auteur</label>
+                <input type="text" class="form-control" id="author" formControlName="author" placeholder="Le nom de l'auteur">
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="bookForm.invalid">Enregistrer</button>
+        </form>
+    </div>
+</div>

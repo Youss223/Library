@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">  
+    <ul class="nav nav-pills">        
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link active" routerLink="books">Livre</a>
+        </li>    
+        <li class="navbar-right nav-item" routerLinkActive="active" *ngIf="!isAuth">
+            <a class="nav-link" routerLink="auth/signup">Créer un compte</a>
+        </li> 
+        <li class="navbar-right nav-item" routerLinkActive="active" *ngIf="!isAuth">
+            <a class="nav-link" routerLink="auth/signin">Connexion</a>
+        </li>  
+        <li class="navbar-right nav-item">
+            <a (click)="onSignOut()" class="nav-link" *ngIf="!isAuth" style="cursor:pointer">Déconnexion</a>
+        </li>  
+    </ul>  
+  </nav>
+  
