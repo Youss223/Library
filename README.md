@@ -1,0 +1,2 @@
+# Library
+Ce  projet,  Gestion  d’une    Bibliothèque,  a  pour  objectif    la  conceptiond’une application   informatique      permettant  d’aider  à  la  gestion  de  la bibliothèque   et   plus précisément, aider à la gestion des emprunts, retours des livres et sanction. Le logiciel, devra permettre donc de  gérer les personnes inscrites, gérer l’emprunt, le retour, l’ajout et suppression des livres.
