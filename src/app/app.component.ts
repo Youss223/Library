@@ -18,7 +18,7 @@ export class AppComponent {
 title = 'Library';
 
 constructor(){}
-
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyABf2fN1VpHH8VQk-WPAphSQs4eiAtfzOY",
   authDomain: "projet-ds-25de9.firebaseapp.com",
@@ -32,7 +32,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const analytics = getAnalytics(app);*/
 
 }
 

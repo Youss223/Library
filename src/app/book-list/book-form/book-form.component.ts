@@ -40,7 +40,7 @@ export class BookFormComponent implements OnInit {
     this.router.navigate(['/books']);
   }
 
-  onUploadFile(file: File){
+ /* onUploadFile(file: File){
     
     this.fileIsUploading = true;
     this.booksService.uploadFile(file).then(
@@ -49,6 +49,6 @@ export class BookFormComponent implements OnInit {
         this.fileIsUploading = false;
         this.fileUploaded = true;
         }
-  }
+  }*/
 
 }
