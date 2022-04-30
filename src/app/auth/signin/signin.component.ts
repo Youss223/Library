@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+//import { AuthService } from "./shared/services/auth.service";
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -10,16 +12,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SigninComponent implements OnInit {
 
-  signInForm!: FormGroup;
-  errorMessage!: string;
-  constructor(private formBuilder: FormBuilder,
-              private authService: AuthService,
-              private router: Router) { }
+  //signInForm!: FormGroup;
+  //errorMessage!: string;
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.initForm();
+   // this.initForm();
   }
-  initForm(){
+ /* initForm(){
     this.signInForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
@@ -36,5 +36,5 @@ export class SigninComponent implements OnInit {
         this.errorMessage = error;
       }
     );
-  }
+  }*/
 }

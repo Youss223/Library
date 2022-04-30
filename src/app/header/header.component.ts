@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -27,8 +28,8 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  onSignOut(){
+  /*onSignOut(){
     this.authService.signOutUser();
-  }
+  }*/
 
 }

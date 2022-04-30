@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
+//import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,16 +11,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  signUpForm!: FormGroup;
-  errorMessage!: string;
-  constructor(private formBuilder: FormBuilder,
-              private authService: AuthService,
-              private router: Router) { }
+  //signUpForm!: FormGroup;
+ // errorMessage!: string;
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.initForm();
+    //this.initForm();
   }
-  initForm(){
+ /* initForm(){
     this.signUpForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
@@ -36,6 +35,6 @@ export class SignupComponent implements OnInit {
         this.errorMessage = error;
       }
     );
-  }
+  }*/
 
 }

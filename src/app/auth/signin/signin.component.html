@@ -1,4 +1,51 @@
-<div class="row">
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h2><b>Connexion</b></h2><hr>
+        <div class="formGroup">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control" formControlName="email" placeholder="Votre email" #userName required />           
+            <!-- <input type="text" class="formControl" placeholder="Username" #userName required>-->
+        </div>
+        <div class="formGroup">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" formControlName="password" placeholder="Votre mot de passe" #userPassword required />
+             <!-- <input type="password" class="formControl" placeholder="Password" #userPassword required>-->
+        </div>
+        <!-- Appel de l'API de connexion depuis AuthService -->
+        <br>
+        <div class="formGroup">
+            <!--<button type="submit" class="btn btn-primary"(click)="authService.SignIn(userName.value, userPassword.value)">Connexion</button>-->
+           <input type="button" class="btn btn-primary" value="Connexion" (click)="authService.SignIn(userName.value, userPassword.value)">
+        </div>
+        <div class="formGroup">
+            <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+          </div>
+        <div class="formGroup">
+            <br>
+                <span class="Ou"><span class="orInner">Ou</span></span>            
+        </div>
+        <br>
+        <!-- Appel de l'API GoogleAuth depuis AuthService -->
+        <div class="formGroup">
+          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Connectez-vous avec Google
+          </button>
+        </div>
+        <br>
+        <div class="text-danger">
+          <span routerLink="/forgot-password">Mot de passe oublié ?</span>
+        </div>
+      </div>
+      <div class="redirectToLogin">
+        <span class="text-info">Vous n'avez pas de compte ?<span class="btn btn-info" routerLink="/register-user">S'inscrire</span></span>
+      </div>
+    </div>
+
+
+
+  <!--<div class="row">
     <div class="col-sm-8 col-sm-offset-2">
         <h2>Connexion</h2><hr>
         <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
@@ -17,4 +64,4 @@
 </div>
 
 
-<p>signin works!</p>
+<p>signin works!</p>-->

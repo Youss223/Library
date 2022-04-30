@@ -1,6 +1,47 @@
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
         <h2>Créer un compte</h2><hr>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email" placeholder="Votre email" #userEmail required >
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" formControlName="password" placeholder="Votre mot de passe" #userPwd required>
+        </div>        
+        <div class="formGroup">
+            <!-- <input type="submit" class="btn btn-primary" value="Créer un compte" (click)="authService.SignUp(userEmail.value, userPwd.value)"/>-->
+          <button type="submit" class="btn btn-primary" (click)="authService.SignUp(userEmail.value, userPwd.value)">Créer mon compte</button>
+        </div>
+        <div class="formGroup">
+          <span class="Ou"><span class="orInner">Ou</span></span>
+        </div>
+        <!-- Continuer avec Google -->
+        <div class="formGroup">
+          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Continuer avec Google
+          </button>
+        </div>
+      </div>
+      <div class="redirectToLogin">
+        <span class="text-info">Vous avez déjà un compte ?<span class="btn btn-info" routerLink="/sign-in">Connexion</span></span>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!--<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2>Créer un compte</h2><hr>
         <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="email">Email</label>
@@ -16,4 +57,4 @@
     </div>
 </div>
 
-<p>signup works!</p>
+<p>signup works!</p> -->
