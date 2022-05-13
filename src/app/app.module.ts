@@ -35,6 +35,7 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
   { path: 'sign-in', component: SigninComponent },
   { path: 'register-user', component: SignupComponent },
   { path: 'books',  component: BookListComponent },
+  { path: 'home',  component: HomeComponent },
   { path: 'books/new', component: BookFormComponent },
   { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
   { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
@@ -67,7 +69,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

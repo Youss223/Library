@@ -1,12 +1,12 @@
 <!-- Top navigation -->
+<div class="container">
 <div class="row">
-    <div class="col-sm-12 col-sm-offset-2">
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-        
-      <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
-    </a>
-  </nav>
+    <div class="col-sm-8 col-sm-offset-2">
+      <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0">        
+        <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
+        </a>
+      </nav>
   <!-- Sidebar navigation -->
   <div class="container-fluid">
     <div class="row">
@@ -39,30 +39,22 @@
           </ul>
         </div>
       </nav>
-      <!-- Main content -->
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-6 px-4">
-        <div class="inner-adjust">
-          <div class="pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2"><b>Profil de l'utilisateur</b></h1><hr>
-          </div>
-          <!-- Show user data when logged in -->
-          <div class="row" *ngIf="authService.userData as user">
-            <div class="col-md-12">
-              <div class="media">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                  alt="{{user.displayName}}">
-                <div class="media-body">
-                  <h1>Salut : <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                  <p>Identifiant : <strong>{{user.uid}}</strong></p>
-                  <p>E-mail : <strong>{{user.email}}</strong></p>
-                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
     </div>
-  </div>
+    
+    </div>
+    <div class="d-flex position-relative" *ngIf="authService.userData as user">
+      <div class="col-md-4 mb-md-0 p-md-2">
+        <img src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" class="w-100" alt="...">
+      </div>
+      <div class="col-md-8 p-4 ps-md-0">
+        <h1 class="h2"><b>Profil de l'utilisateur</b></h1><hr>
+        <h1>Bienvenue : <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+          <p>Identifiant : <strong>{{user.uid}}</strong></p>
+          <p>E-mail : <strong>{{user.email}}</strong></p>
+          <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+      </div>
+    </div>
 </div>
 </div>
+</div>
+

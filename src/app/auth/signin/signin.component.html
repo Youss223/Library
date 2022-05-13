@@ -1,5 +1,5 @@
 
-    <div class="row">
+<div class="container">
         <div class="col-sm-8 col-sm-offset-2">
             <h2><b>Connexion</b></h2><hr>
         <div class="formGroup">
@@ -18,14 +18,12 @@
             <!--<button type="submit" class="btn btn-primary"(click)="authService.SignIn(userName.value, userPassword.value)">Connexion</button>-->
            <input type="button" class="btn btn-primary" value="Connexion" (click)="authService.SignIn(userName.value, userPassword.value)">
         </div>
+        <!--<div class="formGroup">
+            <input type="button" class="btn btnPrimary" value="Login" (click)="authService.SignIn(userName.value, userPassword.value)">
+          </div>-->
         <div class="formGroup">
-            <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-          </div>
-        <div class="formGroup">
-            <br>
                 <span class="Ou"><span class="orInner">Ou</span></span>            
         </div>
-        <br>
         <!-- Appel de l'API GoogleAuth depuis AuthService -->
         <div class="formGroup">
           <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
@@ -41,7 +39,7 @@
       <div class="redirectToLogin">
         <span class="text-info">Vous n'avez pas de compte ?<span class="btn btn-info" routerLink="/register-user">S'inscrire</span></span>
       </div>
-    </div>
+</div>
 
 
 
