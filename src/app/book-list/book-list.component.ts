@@ -33,7 +33,7 @@ onNewBook() {
 }
 
 onDeleteBook(book: Book) {
- // this.booksService.removeBook(book);
+  this.booksService.removeBook(book);
 }
 
 onViewBook(id: number) {

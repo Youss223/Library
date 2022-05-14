@@ -13,7 +13,7 @@ import { AuthService } from '../shared/services/auth.service';
 export class HeaderComponent implements OnInit {
 
   isAuth!: boolean;
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
     firebase.auth().onAuthStateChanged(
@@ -28,8 +28,8 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  /*onSignOut(){
-    this.authService.signOutUser();
-  }*/
+  onSignOut(){
+    this.authService.isLoggedIn;
+  }
 
 }

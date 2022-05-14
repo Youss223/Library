@@ -1,4 +1,3 @@
-
 <div class="container">
         <div class="col-sm-8 col-sm-offset-2">
             <h2><b>Connexion</b></h2><hr>
@@ -15,7 +14,6 @@
         <!-- Appel de l'API de connexion depuis AuthService -->
         <br>
         <div class="formGroup">
-            <!--<button type="submit" class="btn btn-primary"(click)="authService.SignIn(userName.value, userPassword.value)">Connexion</button>-->
            <input type="button" class="btn btn-primary" value="Connexion" (click)="authService.SignIn(userName.value, userPassword.value)">
         </div>
         <!--<div class="formGroup">
@@ -31,8 +29,8 @@
             Connectez-vous avec Google
           </button>
         </div>
-        <br>
-        <div class="text-danger">
+        <br>        
+        <div class="text-danger" routerLinkActive="active">
           <span routerLink="/forgot-password">Mot de passe oublié ?</span>
         </div>
       </div>

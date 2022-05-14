@@ -19,17 +19,21 @@ export class BooksService {
   emitBooks(){
     this.bookSubject.next(this.books);
   }
-
   saveBooks(){
+    firebase.database().ref('/books').set(this.books);
+
+    }
+
+ /* saveBooks(){
     firebase.database().ref('/books')
     .on('value', (data) => {
       this.books = data.val() ? data.val(): [];
       this.emitBooks();
     });
-  }
+  }*/
 
   getBooks() {
-    firebase.database().ref('/books').on('value', (data: firebase.database.DataSnapshot) => {
+    firebase.database().ref('/books').on('value', (data) => {
         this.books = data.val() ? data.val() : [];
     });
   }
@@ -37,7 +41,7 @@ export class BooksService {
   getSingleBook(id: number){
     return new Promise(
       (resolve, reject) => {
-        firebase.database().ref('/books' +id).once('value').then(
+        firebase.database().ref('/books/' +id).once('value').then(
           (data) => {
             resolve(data.val());
       }, (error) => {
@@ -54,24 +58,38 @@ export class BooksService {
     this.emitBooks();
   }
 
- /* *removeBook(book: Book) {
+ removeBook(book: Book) {
+ /* if(book.photo){
+      const storageRef = firebase.storage().refFromURL(book.photo);
+      storageRef.delete().then(
+        () =>{
+          console.log("Photo supprimée");
+        }
+      ).catch(
+          (error) =>{
+            console.log("Fichier non trouvé" + error);
+          }
+      )  ;    
+  }
+*/
     const bookIndexToRemove = this.books.findIndex(
-        (bookElt) => {
-            if (bookElt === book) {
+        (bookEl)=>{
+            if(bookEl === book) {
                 return true;
             }
+            return false;
         }
     );
     this.books.splice(bookIndexToRemove, 1);
     this.saveBooks();
     this.emitBooks();
-  }*/
+  }
+
   uploadFile(file: File){
     return new Promise(
     (resolve, reject) => { 
       const almostUniqueFileName = Date.now().toString();
-      const upload = firebase.storage()
-      .ref()
+      const upload = firebase.storage().ref()
       .child('/images'+ almostUniqueFileName + file.name)
       .put(file);
       upload.on(firebase.storage.TaskEvent.STATE_CHANGED,
@@ -79,7 +97,7 @@ export class BooksService {
           console.log('Chargement ....');
         },
         (error) => {
-          console.log('Erreur de chargement ....'+error);
+          console.log('Erreur de chargement ....' +error);
           reject();
         },
         () => {

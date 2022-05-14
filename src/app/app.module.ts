@@ -10,7 +10,6 @@ import { BookListComponent } from './book-list/book-list.component';
 import { SingleBookComponent } from './book-list/single-book/single-book.component';
 import { BookFormComponent } from './book-list/book-form/book-form.component';
 import { HeaderComponent } from './header/header.component';
-//import { AuthService } from './services/auth.service';
 import { BooksService } from './services/books.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { RouterModule, Routes } from '@angular/router';
@@ -36,6 +35,7 @@ import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { ManagementComponent } from './management/management.component';
 
 
 
@@ -44,17 +44,18 @@ const appRoutes: Routes = [
   /*{ path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent},
   { path: 'appareils/:id', canActivate: [AuthGuard], component: SingleAppareilComponent},
   { path: 'edit', canActivate: [AuthGuard], component: EditAppareilComponent},*/
-  { path: 'sign-in', component: SigninComponent },
+ /* { path: 'sign-in', component: SigninComponent },
   { path: 'register-user', component: SignupComponent },
   { path: 'books',  component: BookListComponent },
   { path: 'home',  component: HomeComponent },
+  { path: 'management',  component: ManagementComponent },
   { path: 'books/new', component: BookFormComponent },
   { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
-  { path: '**', redirectTo: 'dashboard'},
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full'},
+  { path: '**', redirectTo: 'home'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent }
+  { path: 'verify-email-address', component: VerifyEmailComponent }*/
 ];
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ const appRoutes: Routes = [
     ForgotPasswordComponent,
     VerifyEmailComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ManagementComponent
   ],
   imports: [
     BrowserModule,

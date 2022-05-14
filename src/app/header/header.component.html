@@ -10,21 +10,23 @@
                             <li class="nav-item" routerLinkActive="active">
                                 <a class="nav-link" routerLink="books">Livre</a>
                             </li>                                              
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link active" routerLink="books">Gestion</a>
+                            <li class="nav-item" routerLinkActive="active" *ngIf="isAuth">
+                                <a class="nav-link active" routerLink="management">Gestion</a>
                             </li>                             
-                            <li class="nav-item" routerLinkActive="active" >
+                            <li class="nav-item" routerLinkActive="active" *ngIf="!isAuth" >
                                 <a class="nav-link" routerLink="register-user">Créer un compte</a>
-                            </li>                                                   
-                        </ul>  
-                        <form class="d-flex">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>      
-                                 
+                            </li>               
+                            <li class="nav-item" *ngIf="isAuth" >
+                              <a (click)="authService.SignOut()" class="nav-link" style="cursor:pointer;" >Déconnexion</a>
+                            </li> 
+                        </ul>                                                         
                     </div>
                 </div>
         </nav>
+        <form class="d-flex">
+          <input class="form-control m-0" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>  <br>
 </div>
 
 
